@@ -244,8 +244,6 @@ in `dotspacemacs/user-config'."
   (global-set-key (kbd "C-c k") 'erase-buffer)
   (global-set-key (kbd "C-c s") 'shell))
 
-;; testing
-
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
