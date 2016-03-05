@@ -241,7 +241,8 @@ any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-c d") 'dictionary-search)
-  (global-set-key (kbd "C-c k") 'erase-buffer))
+  (global-set-key (kbd "C-c k") 'erase-buffer)
+  (global-set-key (kbd "C-c s") 'shell))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
