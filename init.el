@@ -98,10 +98,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(monokai
+                         spacemacs-dark
                          spacemacs-light
                          leuven
-                         monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -239,10 +239,17 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+
+  ;; Custom shortcuts
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-c d") 'dictionary-search)
   (global-set-key (kbd "C-c k") 'erase-buffer)
-  (global-set-key (kbd "C-c s") 'shell))
+  (global-set-key (kbd "C-c s") 'shell)
+
+  ;; Windows
+  (spacemacs/set-leader-keys (kbd "w x") 'delete-window)
+
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
