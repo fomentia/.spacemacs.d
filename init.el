@@ -251,6 +251,7 @@ in `dotspacemacs/user-config'."
 
   ;; Buffers
   (spacemacs/set-leader-keys (kbd "b r") 'rename-buffer)
+  (spacemacs/set-leader-keys (kbd "b x") 'kill-buffer-and-window)
 
 )
 
