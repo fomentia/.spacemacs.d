@@ -249,6 +249,9 @@ in `dotspacemacs/user-config'."
   ;; Windows
   (spacemacs/set-leader-keys (kbd "w x") 'delete-window)
 
+  ;; Buffers
+  (spacemacs/set-leader-keys (kbd "b r") 'rename-buffer)
+
 )
 
 (defun dotspacemacs/user-config ()
