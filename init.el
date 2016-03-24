@@ -245,13 +245,14 @@ in `dotspacemacs/user-config'."
   (global-set-key (kbd "C-c d") 'dictionary-search)
   (global-set-key (kbd "C-c k") 'erase-buffer)
   (global-set-key (kbd "C-c s") 'shell)
-
-  ;; Windows
   (spacemacs/set-leader-keys (kbd "w x") 'delete-window)
-
-  ;; Buffers
   (spacemacs/set-leader-keys (kbd "b r") 'rename-buffer)
   (spacemacs/set-leader-keys (kbd "b x") 'kill-buffer-and-window)
+  (spacemacs/set-leader-keys (kbd "m m p e") 'markdown-live-preview-export)
+  (spacemacs/set-leader-keys (kbd "f d") 'delete-file)
+
+  ;; Vim stuff
+  ;; template: (define-key evil-[state]-state-map (kbd "blah") 'command)
 
 )
 
