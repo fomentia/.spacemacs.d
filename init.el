@@ -245,13 +245,13 @@ in `dotspacemacs/user-config'."
   (global-set-key (kbd "C-c d") 'dictionary-search)
   (global-set-key (kbd "C-c k") 'erase-buffer)
   (global-set-key (kbd "C-c s") 'shell)
-  (spacemacs/set-leader-keys (kbd "w x") 'delete-window) ;; [w]indows -> [x] delete-window
-  (spacemacs/set-leader-keys (kbd "b r") 'rename-buffer) ;; [b]uffers -> [r]ename
-  (spacemacs/set-leader-keys (kbd "b x") 'kill-buffer-and-window) ;; [b]uffers -> [x] kill-buffer-and-window
-  (spacemacs/set-leader-keys (kbd "f d") 'delete-file) ;; [f]iles -> [d]elete
-  (spacemacs/set-leader-keys (kbd "m m p") 'livedown:preview) ;; [m]ajor modes -> [m]arkdown -> [p]review
-  (spacemacs/set-leader-keys (kbd "m m k") 'livedown:kill) ;; [m]ajor modes -> [m]arkdown -> [k]ill
-  (spacemacs/set-leader-keys (kbd "b i") 'buffer-menu) ;; [b]uffers -> [i]nteractive
+  (spacemacs/set-leader-keys (kbd "w x") 'delete-window)          ;; [w]indows     -> [x] delete-window
+  (spacemacs/set-leader-keys (kbd "b r") 'rename-buffer)          ;; [b]uffers     -> [r]ename
+  (spacemacs/set-leader-keys (kbd "b x") 'kill-buffer-and-window) ;; [b]uffers     -> [x] kill-buffer-and-window
+  (spacemacs/set-leader-keys (kbd "f d") 'delete-file)            ;; [f]iles       -> [d]elete
+  (spacemacs/set-leader-keys (kbd "m m p") 'livedown:preview)     ;; [m]ajor modes -> [m]arkdown                 -> [p]review
+  (spacemacs/set-leader-keys (kbd "m m k") 'livedown:kill)        ;; [m]ajor modes -> [m]arkdown                 -> [k]ill
+  (spacemacs/set-leader-keys (kbd "b i") 'buffer-menu)            ;; [b]uffers     -> [i]nteractive
 
   ;; Vim stuff
   ;; template: (define-key evil-[state]-state-map (kbd "blah") 'command)
@@ -262,7 +262,7 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator 'contour)
   (setq powerline-height 25)
   )
 
