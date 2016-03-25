@@ -43,7 +43,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(alchemist dictionary sublime-themes markdown-preview-mode)
+   dotspacemacs-additional-packages '(alchemist dictionary sublime-themes smart-mode-line smart-mode-line-powerline-theme)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -98,8 +98,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
+                         monokai
                          spacemacs-light
                          leuven
                          zenburn)
@@ -108,7 +108,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -248,8 +248,9 @@ in `dotspacemacs/user-config'."
   (spacemacs/set-leader-keys (kbd "w x") 'delete-window)
   (spacemacs/set-leader-keys (kbd "b r") 'rename-buffer)
   (spacemacs/set-leader-keys (kbd "b x") 'kill-buffer-and-window)
-  (spacemacs/set-leader-keys (kbd "m m p e") 'markdown-live-preview-export)
   (spacemacs/set-leader-keys (kbd "f d") 'delete-file)
+  (spacemacs/set-leader-keys (kbd "m m p") 'livedown:preview)
+  (spacemacs/set-leader-keys (kbd "m m k") 'livedown:kill)
 
   ;; Vim stuff
   ;; template: (define-key evil-[state]-state-map (kbd "blah") 'command)
@@ -260,7 +261,9 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (setq powerline-default-separator 'arrow))
+  (setq powerline-default-separator 'arrow)
+  (setq powerline-height 25)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -276,7 +279,7 @@ layers configuration. You are free to put any user code."
  '(compilation-message-face (quote default))
  '(custom-safe-themes
    (quote
-    ("d28e6c4045c7da963b9f0803d7b35fa757093f46bc2509a9b3f2b1bfb0088b5d" "38ba6a938d67a452aeb1dada9d7cdeca4d9f18114e9fc8ed2b972573138d4664" "91262285dba83780759b638f5665d87eb265f865eda25f873af78977e020c160" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+    ("b04425cc726711a6c91e8ebc20cf5a3927160681941e06bc7900a5a5bfe1a77f" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "d28e6c4045c7da963b9f0803d7b35fa757093f46bc2509a9b3f2b1bfb0088b5d" "38ba6a938d67a452aeb1dada9d7cdeca4d9f18114e9fc8ed2b972573138d4664" "91262285dba83780759b638f5665d87eb265f865eda25f873af78977e020c160" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors
    (quote
@@ -288,6 +291,7 @@ layers configuration. You are free to put any user code."
      ("#A45E0A" . 70)
      ("#A41F99" . 85)
      ("#3E3D31" . 100))))
+ '(mac-option-modifier (quote meta))
  '(magit-diff-use-overlays nil)
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
